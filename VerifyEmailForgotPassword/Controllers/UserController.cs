@@ -88,7 +88,7 @@ namespace VerifyEmailForgotPassword.Controllers
             }
 
             user.PasswordResetToken = CreateRandomToken();
-            user.ResetTokenExpies =  DateTime.Now.AddMinutes(60);
+            user.ResetTokenExpies =  DateTime.Now.AddMinutes(1);
             await _context.SaveChangesAsync();
 
             return Ok("You may now reset your password");
